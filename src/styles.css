@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+.nav-link p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a.navbar-brand {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 767.98px) {
+    .navbar-wrapper {
+        max-width: 85%;
+    }
+    .main-panel>.content {
+        padding: 0 15px;
+    }
+    .card {
+        margin-top: 0;
+    }
+    /* .card-body {
+      height: 280px;
+    } */
+}
+
+@media (min-width: 768px) {
+    .navbar-wrapper {
+        max-width: 80%;
+    }
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+}
+
+.cdk-overlay-container {
+    z-index: 9999;
+}

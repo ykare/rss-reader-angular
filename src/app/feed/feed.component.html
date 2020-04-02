@@ -1,0 +1,24 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+      <ng-container *ngIf="feed">
+        <div *ngFor="let article of articles | async" class="col mb-4">
+          <a [routerLink]="['/article', article.id]">
+            <div class="card bg-dark text-white h-100">
+              <ng-container *ngIf="article.imageUrl;else noimage">
+                <img class="card-img" [src]="article.imageUrl" rel="nofollow" alt="Card image cap">
+              </ng-container>
+              <ng-template #noimage>
+                <img class="card-img" src="/assets/img/noimage.png" rel="nofollow" alt="Card image cap">
+              </ng-template>
+              <div class="card-body">
+                <h4 class="card-title">{{ article.title }}</h4>
+                <p class="card-text" [innerHTML]="article.description | safeHtml"></p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="card card-signup card-plain">
+    <div mat-dialog-title>
+        <div class="card-header card-header-primary text-center w-100">
+            <h4 class="card-title">購読の追加</h4>
+        </div>
+    </div>
+    <mat-dialog-content>
+        <div class="card-body">
+            <div class="form-group bmd-form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="material-icons">title</i></div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="RSS のタイトルを入力してください"
+                        [(ngModel)]="data.feedTitle">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="material-icons">rss_feed</i></div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="RSS の URL を入力してください"
+                        [(ngModel)]="data.feedUrl">
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="card-footer">
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial
+            class="btn btn-primary btn-link btn-wd btn-lg mr-auto ml-auto">Add</button>
+    </mat-dialog-actions>
+</div>

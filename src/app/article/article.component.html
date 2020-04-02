@@ -1,0 +1,55 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row mr-auto ml-auto" style="max-width: 1200px;">
+      <ng-container *ngIf="article">
+        <!--
+        前の記事へのナビゲーション(未実装)
+        <div class="col-1 d-flex align-items-end">
+          <ng-container *ngIf="article.prev;else noPrev">
+            <a [routerLink]="['/article/', article.prev]">
+              <i class="material-icons">arrow_back_ios</i>
+            </a>
+          </ng-container>
+          <ng-template #noPrev>
+            <span href="#" class="disabled">
+              <i class="material-icons">arrow_back_ios</i>
+            </span>
+          </ng-template>
+        </div>
+        -->
+        <div class="col-10 d-flex mx-auto mb-0 mb-md-4">
+          <div class="card bg-dark text-white h-100">
+            <ng-container *ngIf="article.imageUrl;else noImage">
+              <img class="card-img" [src]="article.imageUrl" rel="nofollow" alt="Card image cap">
+            </ng-container>
+            <ng-template #noImage>
+              <img class="card-img" src="/assets/img/noimage.png" rel="nofollow" alt="Card image cap">
+            </ng-template>
+            <div class="card-body">
+              <h4 class="card-title">{{article.title}}</h4>
+              <p class="card-text">{{ article.description | safeHtml }}</p>
+            </div>
+            <div class="card-footer">
+              <a href="{{article.url}}" class="btn btn-primary col-12" target="_blank">View
+                original site</a>
+            </div>
+          </div>
+        </div>
+        <!-- 次の記事へのナビゲーション(未実装)
+        <div class="col-1 d-flex align-items-end">
+          <ng-container *ngIf="article.next;else noNext">
+            <a [routerLink]="['/article/', article.next]">
+              <i class="material-icons">arrow_forward_ios</i>
+            </a>
+          </ng-container>
+          <ng-template #noNext>
+            <span href="#" class="disabled">
+              <i class="material-icons">arrow_forward_ios</i>
+            </span>
+          </ng-template>
+        </div>
+        -->
+      </ng-container>
+    </div>
+  </div>
+</div>
